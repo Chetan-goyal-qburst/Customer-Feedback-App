@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/header/Header";
+import Header from "../../../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
 import { Col, Container, Row } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";

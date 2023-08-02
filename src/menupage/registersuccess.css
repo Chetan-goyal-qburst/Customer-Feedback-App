@@ -1,0 +1,17 @@
+
+.registeredMessage{
+    color:grey;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.backtologinbtn{
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.backtologinbtn:hover{
+    color: grey;
+}

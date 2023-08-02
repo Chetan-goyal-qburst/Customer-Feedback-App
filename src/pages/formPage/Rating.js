@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { FaStar } from 'react-icons/fa';
 
-export default function Rating() {
-  const numStars = 5;
-  const [selectedRating, setSelectedRating] = useState(null);
+const Rating = () => {
+  const [rating, setRating] = useState(0);
 
-  const handleRatingChange = (event) => {
-    const selectedRating = parseInt(event.target.value);
-    setSelectedRating(selectedRating);
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
   };
 
   return (
-    <div className="rating-container">
-      {Array.from({ length: numStars }, (_, index) => index + 1).map((ratingValue) => (
-        <label key={ratingValue} className={`star-label ${ratingValue <= selectedRating ? 'star-selected' : ''}`}>
-          <span className="star-icon">★</span>
-          <input
-            type="radio"
-            name="rating"
-            value={ratingValue}
-            className="star-input"
-            onChange={handleRatingChange}
-          />
-        </label>
-      ))}
+    <div>
+      {[...Array(5)].map((_, index) => {
+        const starValue = index + 1;
+        return (
+          <span
+            key={index}
+            className={`star ${starValue <= rating ? 'active' : ''}`}
+            onClick={() => handleRatingChange(starValue)}
+          >
+            <FaStar size={40} style={{ color: starValue <= rating ? '	#FFC000' : 'gray' }} />
+          </span>
+        );
+      })}
+      <p className="mx-4 mt-2 fw-medium">Selected rating: {rating}</p>
     </div>
   );
-}
+};
+
+export default Rating;

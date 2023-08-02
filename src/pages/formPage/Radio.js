@@ -43,7 +43,7 @@ export default function Radio() {
             <label htmlFor={`radio-option${radioButton.id}`} />
             <input
               type="text"
-              className="form-select-lg mb-3"
+              className="form-select-lg mb-3 mx-2"
               value={radioButton.value}
               id={`text-option${radioButton.id}`}
             />

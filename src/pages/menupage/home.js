@@ -7,7 +7,7 @@ const HomePage = ()=>{
             
             <div>
                 <NavBar/>
-                <h1>Welcome to home page</h1>
+                <h1 className="homeMessage">Welcome to home page</h1>
             </div>
         );
 }

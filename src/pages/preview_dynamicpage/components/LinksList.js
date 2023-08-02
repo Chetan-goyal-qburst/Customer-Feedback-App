@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 import LinkService from './LinkService';
+import NavBar from "../../menupage/navbar";
 
 const LinksList = () => {
+  
   const [links, setLinks] = useState([]);
   const [editLink, setEditLink] = useState(null);
   const [showAddLinkModal, setShowAddLinkModal] = useState(false);
@@ -59,7 +61,10 @@ const LinksList = () => {
   };
 
   return (
+   <div>
+    <NavBar/>
     <div className="container">
+       
       <h1 className="mt-4 mb-4">Links List</h1>
       <table className="table">
         <thead>
@@ -204,6 +209,7 @@ const LinksList = () => {
         </Modal>
       )}
 
+    </div>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import EndPage from "../src/pages/menupage/endpage";
 import HomePage from "../src/pages/menupage/home";
 import LoginPage from "../src/pages/menupage/loginpage";
 import RegisterSuccess from "../src/pages/menupage/registersuccess";
+import LinksList from "../src/pages/preview_dynamicpage/components/LinksList";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
   },
   {
     path: "links",
-    element: < />,
+    element: <LinksList />,
   },
 ]);
 

@@ -1,0 +1,23 @@
+.heading-text {
+  background-color: #9e9fa5;
+  padding: 50px 0px;
+  padding-left: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-style: groove;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.tab-row {
+  display: inline-block;
+  position: absolute;
+  right: 0%;
+}

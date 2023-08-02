@@ -10,6 +10,10 @@ import HomePage from "../src/pages/menupage/home";
 import LoginPage from "../src/pages/menupage/loginpage";
 import RegisterSuccess from "../src/pages/menupage/registersuccess";
 import LinksList from "../src/pages/preview_dynamicpage/components/LinksList";
+import CompanyList from "./pages/companypage/page/companylist/CompanyList";
+import Companyregistration from "./pages/companypage/page/companyregistration/Companyregistration";
+import ProductList from "./pages/companypage/page/productlist/Productlist";
+import Productregistration from "./pages/companypage/page/productregistration/Productregistration";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +47,22 @@ const router = createBrowserRouter([
   {
     path: "links",
     element: <LinksList />,
+  },
+  {
+    path: "/companylist",
+    element: <CompanyList />,
+  },
+  {
+    path: "/companyregister",
+    element: <Companyregistration />,
+  },
+  {
+    path: "/productlist",
+    element: <ProductList />,
+  },
+  {
+    path: "/productregister",
+    element: <Productregistration />,
   },
 ]);
 

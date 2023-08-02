@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  {Navbar} from 'react-bootstrap';
-import "./registersuccess.css";
+import "./styles.css";
 
 const RegisterSuccess = ()=>{
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleAuthentication from "./googleauth";
-import "./loginpage.css";
+import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -96,7 +96,7 @@ function LoginPage() {
           </button>
         </form>
         <p className="signUpMessage">
-          Don't have an account? Sign Up
+          Don't have an account? Sign Up<span> </span>
           <Link className="signUpAnchor" to="/register">
             here
           </Link>

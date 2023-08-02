@@ -19,7 +19,7 @@ const NavBar = () => {
               <NavDropdown.Item as={Link} to="/companylist">
                 Company
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/forms">
+              <NavDropdown.Item as={Link} to="/formpage">
                 Forms
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/customer">

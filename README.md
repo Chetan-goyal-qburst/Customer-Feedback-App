@@ -1,12 +1,12 @@
 # Customer-Feedback-App
 
 team member-
-<tr>
-  <td>Chetan-goyal-qburst</td>
-  <td>amanpandey-qburst</td>
-  <td>rajendrapatelqburst</td>
-  <td>Anurag-kumar-work</td>
-</tr>
+<table>
+  <tr><td>Chetan-goyal-qburst</td></tr>
+  <tr><td>amanpandey-qburst</td></tr>
+  <tr><td>rajendrapatelqburst</td></tr>
+  <tr><td>Anurag-kumar-work</td></tr>
+</table>
 
 
 

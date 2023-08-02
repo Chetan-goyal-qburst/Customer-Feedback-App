@@ -1,6 +1,6 @@
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from "reactjs-social-login";
-import "./loginpage.css";
+import "./styles.css";
 
 
 

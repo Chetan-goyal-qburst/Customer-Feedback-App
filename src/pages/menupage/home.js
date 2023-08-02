@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./navbar";
-import "./loginpage.css";
+import "./styles.css";
 
 const HomePage = ()=>{
         return (

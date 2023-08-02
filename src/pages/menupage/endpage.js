@@ -1,5 +1,5 @@
 import React from "react";
-import "./endpage.css";
+import "./styles.css";
 import NavBar from "./navbar";
 import {Link} from "react-router-dom";
 

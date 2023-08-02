@@ -92,7 +92,7 @@ function LoginPage(){
                   />
                </label><br></br>
             <br></br>
-           <button type="submit" id="loginbtn">Login</button>    
+          <button type="submit" id="loginbtn">Login</button>    
         </form>
           <p className="signUpMessage">Don't have an account? Sign Up <Link className="signUpAnchor" to="/register">here</Link></p>
         <span ><GoogleAuthentication/></span> 

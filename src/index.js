@@ -14,6 +14,7 @@ import CompanyList from "./pages/companypage/page/companylist/CompanyList";
 import Companyregistration from "./pages/companypage/page/companyregistration/Companyregistration";
 import ProductList from "./pages/companypage/page/productlist/Productlist";
 import Productregistration from "./pages/companypage/page/productregistration/Productregistration";
+import Layout from "./pages/formPage/Layout";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
   {
     path: "/productregister",
     element: <Productregistration />,
+  },
+  {
+    path: "/formpage",
+    element: <Layout />,
   },
 ]);
 

@@ -19,7 +19,7 @@ function LoginPage(){
     setPassword(event.target.value);
   };
   const flag=false;
-
+  
   const handleLogin = (event)=>{
    
     event.preventDefault();
@@ -45,7 +45,7 @@ function LoginPage(){
         
         if(flag===false)
         {
-         alert("Invalid credentials or you have not Signed Up!");
+         alert("Invalid credentials or you have not Registered!");
 
         } 
       

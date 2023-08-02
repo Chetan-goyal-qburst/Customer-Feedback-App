@@ -40,28 +40,28 @@ const Productlist = () => {
         />
 
         <Detailtab
+          className="tab-header"
           key="0"
-          serialno=""
+          serialno="Serial no."
           name="Product Name"
           email="Email"
           country="Country"
           industry="Type"
         ></Detailtab>
 
-        <Container className="detail_board">
-          <div>
-            {companydata.map((data) => (
-              <Detailtab
-                key={data.id}
-                pserialno={data.id}
-                name={data.productname}
-                email={data.productemail}
-                country={data.productcountry}
-                industry={data.producttype}
-              ></Detailtab>
-            ))}
-          </div>
-        </Container>
+        <div>
+          {companydata.map((data) => (
+            <Detailtab
+              key={data.id}
+              pserialno={data.id}
+              serialno={data.id}
+              name={data.productname}
+              email={data.productemail}
+              country={data.productcountry}
+              industry={data.producttype}
+            ></Detailtab>
+          ))}
+        </div>
       </div>
     </div>
   );

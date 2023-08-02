@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
+import "./companylist.css";
 
 const CompanyList = () => {
   const [companydata, setcompany] = useState([]);
@@ -40,28 +41,27 @@ const CompanyList = () => {
         />
 
         <Detailtab
+          className="tab-header"
           key="0"
-          serialno=""
+          serialno="Serial No."
           name="Company Name"
           email="Email"
           country="Country"
           industry="Industry"
         ></Detailtab>
 
-        <Container className="detail_board">
-          <div>
-            {companydata.map((data) => (
-              <Detailtab
-                key={data.id}
-                serialno={data.id}
-                name={data.CompanyName}
-                email={data.email}
-                country={data.Country}
-                industry={data.industry}
-              ></Detailtab>
-            ))}
-          </div>
-        </Container>
+        <div>
+          {companydata.map((data) => (
+            <Detailtab
+              key={data.id}
+              serialno={data.id}
+              name={data.CompanyName}
+              email={data.email}
+              country={data.Country}
+              industry={data.industry}
+            ></Detailtab>
+          ))}
+        </div>
       </div>
     </div>
   );

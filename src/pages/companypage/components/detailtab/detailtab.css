@@ -1,13 +1,19 @@
-.detail_header {
-  margin-top: 20px;
-}
-
-.data-element {
-  text-align: left;
-}
-
 .data-row {
+  background-color: #f1f6f9;
   margin-top: 10px;
   text-align: center;
   border-bottom: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tab-header {
+  z-index: 10;
+  background-color: #f1f6f9;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 30px;
 }

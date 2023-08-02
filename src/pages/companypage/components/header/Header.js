@@ -1,10 +1,11 @@
 import React from "react";
+import "../../../../components/header/header.css";
 import "./header.css";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
-    <div className="heading-company">
+    <div className="heading-text">
       <div className="tab-row">
         <div className="tab">
           <Link to={props.listlink}>

@@ -163,10 +163,19 @@
 /* style for home page starts here*/
 
 /* style for customer page starts here*/
+.FeedbackForm{
+    text-align: center;
+    padding-top: 1%;
+    border: groove;
+    margin-top: 1%;
+    margin-left: 25%;
+    width: 50%;
+}
 .submitbtn{
     border-radius: 10px;
     background-color: black;
     color: white;
+    margin-bottom: 2%;
 }
 
 .submitbtn:hover{

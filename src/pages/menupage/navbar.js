@@ -12,11 +12,11 @@ const NavBar = () => {
         <Navbar.Brand as={Link} to="/home" id="qburst">
           Home
         </Navbar.Brand>
-        <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle style={{backgroundColor:"white"}} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse  id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/companylist">
+            <NavDropdown title="Actions" id="basic-nav-dropdown" >
+              <NavDropdown.Item as={Link} to="/companylist" >
                 Company
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/formpage">

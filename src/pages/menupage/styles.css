@@ -153,8 +153,14 @@
 .menubar{
     background-color: black;
 }
-
 /* style for navbar page ends here*/
+
+/* style for home page starts here*/
+.homeMessage{
+    text-align: center;
+    padding-top: 15%;
+}
+/* style for home page starts here*/
 
 /* style for customer page starts here*/
 .submitbtn{

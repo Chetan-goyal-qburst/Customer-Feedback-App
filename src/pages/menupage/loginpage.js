@@ -62,7 +62,6 @@ function LoginPage() {
 
       <Header name="Login Page" />
 
-      <h2 className="signin">Sign In</h2>
       <div className="login-container">
         <form onSubmit={handleLogin}>
           <label className="labellogin">

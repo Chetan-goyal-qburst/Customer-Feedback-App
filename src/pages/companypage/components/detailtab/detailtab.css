@@ -9,4 +9,5 @@
 .data-row {
   margin-top: 10px;
   text-align: center;
+  border-bottom: 1px solid;
 }

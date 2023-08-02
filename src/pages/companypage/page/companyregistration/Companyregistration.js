@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
-import Header from "../../../../components/header/Header";
+import Header from "../../components/header/Header";
 import "./companyregistration.css";
 
 const Companyregistration = () => {
@@ -40,7 +40,7 @@ const Companyregistration = () => {
     <>
       <NavBar />
       <Header
-        name="Company List"
+        name="Company Register"
         registerlink="/companyregister"
         listlink="/companylist"
       />

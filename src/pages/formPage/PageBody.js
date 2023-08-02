@@ -77,14 +77,15 @@ export default function PageBody() {
                      <button onClick={() => deleteQuestion(index)} className="btn btn-primary ">Delete</button>
                      
                     
-                    <hr className="font-weight-bold"/>
+                    <hr/>
+                    
                   </>
           )
         })
 
       }
       
-      <button onClick={()=> addQuestion()}  className="btn btn-primary mb-2">Add Another Question</button>
+      <button onClick={()=> addQuestion()}  className="btn btn-primary mb-2 mt-2">Add Another Question</button>
     </div>
   );
 }

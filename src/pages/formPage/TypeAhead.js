@@ -29,7 +29,7 @@ export default function TypeAhead() {
           />
         ))}
       </div>
-      <button onClick={addOption} className="btn btn-primary">Add Option</button>
+      <button onClick={addOption} className="btn btn-primary mt-3">Add Option</button>
     </div>
   );
 }

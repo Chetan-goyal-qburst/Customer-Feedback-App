@@ -94,7 +94,7 @@ const Productregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Industry</td>
+              <td>Type</td>
               <td>
                 <input
                   id="vtype"
@@ -118,7 +118,7 @@ const Productregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Company Logo</td>
+              <td>Product Logo</td>
               <td>
                 <input
                   type="file"
@@ -143,7 +143,7 @@ const Productregistration = () => {
             </tr>
 
             <tr>
-              <td>Company Contact</td>
+              <td>Product Contact</td>
             </tr>
             <tr>
               <td>First name</td>

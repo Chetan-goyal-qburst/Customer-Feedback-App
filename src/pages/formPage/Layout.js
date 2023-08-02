@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div>
         <NavBar/>
-        <Header name="Create Form"/>
+        <Header className="z-1 w-max position-absolute"/>
        <Page1/>
        <PageBody/>
     </div>

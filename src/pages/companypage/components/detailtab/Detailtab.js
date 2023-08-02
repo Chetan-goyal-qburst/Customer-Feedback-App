@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import "./detailtab.css";
 
 const Detailtab = (props) => {
+  localStorage.setItem("no_of_company", props.serialno);
+  localStorage.setItem("no_of_product", props.pserialno);
+
   return (
     <>
       <Container>

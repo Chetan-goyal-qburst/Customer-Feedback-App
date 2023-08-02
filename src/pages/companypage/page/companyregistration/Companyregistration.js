@@ -12,29 +12,55 @@ const Companyregistration = () => {
     console.log(event.target.files[0]);
   }
 
-  function addDetail() {}
+  const handleSubmit = (event) => {
+    event.preventDefault(); // 👈️ prevent page refresh
+  };
 
-  // function inputapi() {
-  //   addDetail();
-  //   fetch("https://64bf85da0d8e251fd110f4d8.mockapi.io/cfa", {
-  //     method: "POST",
-  //     headers: { "content-type": "application/json" },
-  //     // Send your data in the request body as JSON
-  //     body: JSON.stringify(company_details),
-  //   })
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       }
-  //       // handle error
-  //     })
-  //     .then((task) => {
-  //       // do something with the new task
-  //     })
-  //     .catch((error) => {
-  //       // handle error
-  //     });
-  // }
+  let no_of_company = localStorage.getItem("no_of_company");
+  let company_details = {
+    CompanyName: "",
+    Country: "",
+    email: "",
+    industry: "",
+    Description: "",
+    Firstname: "",
+    Secondname: "",
+    nameinlink: "",
+    id: no_of_company++,
+  };
+
+  function addDetail() {
+    company_details.CompanyName = document.getElementById("vname").value;
+    company_details.Description = document.getElementById("vdescription").value;
+    company_details.industry = document.getElementById("vindustry").value;
+    company_details.Country = document.getElementById("vcountry").value;
+    company_details.nameinlink = document.getElementById("vnameinlink").value;
+    company_details.email = document.getElementById("vemail").value;
+    company_details.Secondname = document.getElementById("vfname").value;
+    company_details.Firstname = document.getElementById("vlname").value;
+  }
+
+  function inputapi() {
+    addDetail();
+    fetch("https://64bf85da0d8e251fd110f4d8.mockapi.io/cfa", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      // Send your data in the request body as JSON
+      body: JSON.stringify(company_details),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        // handle error
+      })
+      .then((task) => {
+        // do something with the new task
+      })
+      .catch((error) => {
+        // handle error
+      });
+  }
 
   return (
     <>
@@ -45,7 +71,7 @@ const Companyregistration = () => {
         listlink="/companylist"
       />
       <Container>
-        <form className="register">
+        <form onSubmit={handleSubmit} className="register">
           <table id="table" className="company_list">
             <tr className="label-row">
               <td>Company Name</td>
@@ -60,7 +86,7 @@ const Companyregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Company Description</td>
+              <td>Description</td>
               <td>
                 <input
                   id="vdescription"
@@ -73,10 +99,22 @@ const Companyregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Company Industry</td>
+              <td>Industry</td>
               <td>
                 <input
                   id="vindustry"
+                  type="text"
+                  name="myInput"
+                  size="20"
+                  // onKeyUp="name_validate()"
+                />
+              </td>
+            </tr>
+            <tr className="label-row">
+              <td>Country</td>
+              <td>
+                <input
+                  id="vcountry"
                   type="text"
                   name="myInput"
                   size="20"
@@ -100,7 +138,7 @@ const Companyregistration = () => {
               <td>Name to be shown in URL</td>
               <td>
                 <input
-                  id="vindustry"
+                  id="vnameinlink"
                   type="text"
                   name="myInput"
                   size="20"
@@ -148,7 +186,7 @@ const Companyregistration = () => {
             </tr>
           </table>
 
-          <button className="button-7" role="button">
+          <button className="button-7" role="button" onClick={inputapi}>
             Submit
           </button>
         </form>

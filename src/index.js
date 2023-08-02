@@ -39,6 +39,10 @@ const router = createBrowserRouter([
     path: "registersuccess",
     element: <RegisterSuccess />,
   },
+  {
+    path: "links",
+    element: < />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -12,27 +12,50 @@ const Productregistration = () => {
     console.log(event.target.files[0]);
   }
 
-  // function inputapi() {
-  //   addDetail();
-  //   fetch("https://64bf85da0d8e251fd110f4d8.mockapi.io/cfa", {
-  //     method: "POST",
-  //     headers: { "content-type": "application/json" },
-  //     // Send your data in the request body as JSON
-  //     body: JSON.stringify(company_details),
-  //   })
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       }
-  //       // handle error
-  //     })
-  //     .then((task) => {
-  //       // do something with the new task
-  //     })
-  //     .catch((error) => {
-  //       // handle error
-  //     });
-  // }
+  const handleSubmit = (event) => {
+    event.preventDefault(); // 👈️ prevent page refresh
+  };
+
+  let no_of_product = localStorage.getItem("no_of_product");
+  let product_details = {
+    productname: "",
+    producttype: "",
+    productcountry: "",
+    productemail: "",
+    productdescription: "",
+    id: no_of_product++,
+  };
+
+  function addDetail() {
+    product_details.productname = document.getElementById("vname").value;
+    product_details.productdescription =
+      document.getElementById("vdescription").value;
+    product_details.producttype = document.getElementById("vtype").value;
+    product_details.productcountry = document.getElementById("vcountry").value;
+    product_details.productemail = document.getElementById("vemail").value;
+  }
+
+  function inputapi() {
+    addDetail();
+    fetch("https://64bf85da0d8e251fd110f4d8.mockapi.io/productlist", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      // Send your data in the request body as JSON
+      body: JSON.stringify(product_details),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        // handle error
+      })
+      .then((task) => {
+        // do something with the new task
+      })
+      .catch((error) => {
+        // handle error
+      });
+  }
 
   return (
     <>
@@ -43,8 +66,8 @@ const Productregistration = () => {
         listlink="/productlist"
       />
       <Container>
-        <form className="register">
-          <table id="table" className="company_list">
+        <form onSubmit={handleSubmit} className="register">
+          <table id="table" className="product_list">
             <tr className="label-row">
               <td>Product Name</td>
               <td>
@@ -58,7 +81,7 @@ const Productregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Product Description</td>
+              <td>Description</td>
               <td>
                 <input
                   id="vdescription"
@@ -71,10 +94,10 @@ const Productregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Product Type</td>
+              <td>Industry</td>
               <td>
                 <input
-                  id="vindustry"
+                  id="vtype"
                   type="text"
                   name="myInput"
                   size="20"
@@ -83,7 +106,19 @@ const Productregistration = () => {
               </td>
             </tr>
             <tr className="label-row">
-              <td>Product Logo</td>
+              <td>Country</td>
+              <td>
+                <input
+                  id="vcountry"
+                  type="text"
+                  name="myInput"
+                  size="20"
+                  // onKeyUp="name_validate()"
+                />
+              </td>
+            </tr>
+            <tr className="label-row">
+              <td>Company Logo</td>
               <td>
                 <input
                   type="file"
@@ -98,7 +133,7 @@ const Productregistration = () => {
               <td>Name to be shown in URL</td>
               <td>
                 <input
-                  id="vindustry"
+                  id="vnameinlink"
                   type="text"
                   name="myInput"
                   size="20"
@@ -108,7 +143,7 @@ const Productregistration = () => {
             </tr>
 
             <tr>
-              <td>Product Contact</td>
+              <td>Company Contact</td>
             </tr>
             <tr>
               <td>First name</td>
@@ -146,7 +181,7 @@ const Productregistration = () => {
             </tr>
           </table>
 
-          <button className="button-7" role="button">
+          <button className="button-7" role="button" onClick={inputapi}>
             Submit
           </button>
         </form>

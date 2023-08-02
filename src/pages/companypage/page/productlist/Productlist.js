@@ -53,7 +53,7 @@ const Productlist = () => {
             {companydata.map((data) => (
               <Detailtab
                 key={data.id}
-                serialno={data.id}
+                pserialno={data.id}
                 name={data.productname}
                 email={data.productemail}
                 country={data.productcountry}

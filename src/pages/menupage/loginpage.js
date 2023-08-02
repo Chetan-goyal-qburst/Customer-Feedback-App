@@ -96,7 +96,7 @@ function LoginPage() {
           </button>
         </form>
         <p className="signUpMessage">
-          Don't have an account? Sign Up{" "}
+          Don't have an account? Sign Up
           <Link className="signUpAnchor" to="/register">
             here
           </Link>

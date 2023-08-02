@@ -29,6 +29,14 @@ export default function CheckBox() {
     setCheckboxes(checkboxes.slice(0, checkboxes.length - 1));
   };
 
+  const handleOptionChange = (id, newValue) => {
+    setCheckboxes((prevCheckboxes) =>
+      prevCheckboxes.map((checkbox) =>
+        checkbox.id === id ? { ...checkbox, value: newValue } : checkbox
+      )
+    );
+  };
+
   return (
     <div>
       <div className="checkbox-container">
@@ -47,12 +55,17 @@ export default function CheckBox() {
               className="form-select-lg mb-3 mx-1"
               value={checkbox.value}
               id={`text-option${checkbox.id}`}
+              onChange={(e) => handleOptionChange(checkbox.id, e.target.value)}
             />
           </div>
         ))}
       </div>
-      <button onClick={addCheckbox} className="btn btn-primary">Add Checkbox</button>
-      <button onClick={deleteCheckbox} className="btn btn-primary mx-2">Delete Checkbox</button>
+      <button onClick={addCheckbox} className="btn btn-primary">
+        Add Checkbox
+      </button>
+      <button onClick={deleteCheckbox} className="btn btn-primary mx-2">
+        Delete Checkbox
+      </button>
     </div>
   );
 }

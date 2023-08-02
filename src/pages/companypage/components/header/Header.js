@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
-    <div className="heading-text">
+    <div>
       <div className="tab-row">
         <div className="tab">
           <Link to={props.listlink}>

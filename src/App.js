@@ -1,12 +1,8 @@
-import LoginPage from "../src/menupage/loginpage";
+import LoginPage from "../src/pages/menupage/loginpage";
 import React from "react";
-import NavBar from "../src/menupage/navbar";
-import HomePage from "../src/menupage/home";
 
-const App = ()=>{
-    return  (
-    <LoginPage/>
-    );
-}
+const App = () => {
+  return <LoginPage />;
+};
 
 export default App;

@@ -1,217 +1,216 @@
 /*style for login page start*/
 #qburst {
-    color: aliceblue;
-    padding-left: 1%;
-  }
-  
-  .menubar {
-    background-color: black;
-  }
-  
-  .loginpage {
-    margin-top: 0;
-  }
-  
-  .signin {
-    text-align: center;
-    color: rgb(94, 92, 92);
-    margin-top: 1%;
-  }
-  
-  .labellogin {
-    color: rgb(80, 79, 79);
-  }
-  
-  .InputLogin {
-    border-radius: 20px;
-    border: groove;
-    width: 250px;
-  }
-  
-  .InputLogin::placeholder {
-    text-align: center;
-  }
-  
-  .login-container {
-    text-align: center;
-    border-style: groove;
-    width: 30%;
-    margin-left: 35%;
-    border-radius: 10px;
-  
-    padding-top: 2%;
-    background-color: rgba(232, 241, 238, 0.986);
-  }
-  
-  #loginbtn {
-    width: 20%;
-    background-color: rgb(14, 13, 13);
-    margin-top: 0.5%;
-    margin-bottom: 1%;
-    color: white;
-    border-radius: 10px;
-    border: black;
-  }
-  
-  #loginbtn:hover {
-    color: grey;
-  }
-  
-  .googleauth {
-    padding-bottom: 5%;
-    padding-right: 30%;
-    padding-left: 30%;
-  }
-  
-  .signUpMessage {
-    font-style: oblique;
-    color: rgb(31, 30, 30);
-  }
-  
-  .signUpAnchor {
-    text-decoration: none;
-  }
- /* style for login page ends here */  
+  color: aliceblue;
+  padding-left: 1%;
+}
+
+.menubar {
+  background-color: black;
+}
+
+.loginpage {
+  margin-top: 0;
+}
+
+.signin {
+  text-align: center;
+  color: rgb(94, 92, 92);
+  margin-top: 1%;
+}
+
+.labellogin {
+  color: rgb(80, 79, 79);
+}
+
+.InputLogin {
+  border-radius: 20px;
+  border: groove;
+  width: 250px;
+}
+
+.InputLogin::placeholder {
+  text-align: center;
+}
+
+.login-container {
+  text-align: center;
+  border-style: groove;
+  width: 30%;
+  margin-left: 35%;
+  border-radius: 10px;
+
+  padding-top: 2%;
+  background-color: rgba(232, 241, 238, 0.986);
+}
+
+.loginbtn {
+  width: 20%;
+  background-color: rgb(14, 13, 13);
+  margin-top: 0.5%;
+  margin-bottom: 1%;
+  color: white;
+  border-radius: 10px;
+  border: black;
+}
+
+.loginbtn:hover {
+  color: grey;
+}
+
+.googleauth {
+  padding-bottom: 5%;
+  padding-right: 30%;
+  padding-left: 30%;
+}
+
+.signUpMessage {
+  font-style: oblique;
+  color: rgb(31, 30, 30);
+}
+
+.signUpAnchor {
+  text-decoration: none;
+}
+/* style for login page ends here */
 
 /* style for register page starts here*/
-.registerPage{
-    margin-top: 0;
+.registerPage {
+  margin-top: 0;
 }
 
-.registerHead{
-    text-align: center;
-    color: rgb(94, 92, 92);
-    margin-top: 5%;
+.registerHead {
+  text-align: center;
+  color: rgb(94, 92, 92);
+  margin-top: 5%;
 }
 
-.registerLabel{
-    color: rgb(80, 79, 79);
+.registerLabel {
+  color: rgb(80, 79, 79);
 }
 
-.registerInput{
-    border-radius: 20px;
-    border:groove;
-    width: 250px;
-    
+.registerInput {
+  border-radius: 20px;
+  border: groove;
+  width: 250px;
 }
 
-.registerInput::placeholder{
-    text-align: center;
+.registerInput::placeholder {
+  text-align: center;
 }
 
-.register-container{
-    text-align: center;
-     border-style: groove;
-    width: 30%; 
-    margin-left: 35%;
-    border-radius: 10px;
-    height: 40%;
-    padding-top: 50px;
-    background-color: rgba(232, 241, 238, 0.986);
+.register-container {
+  text-align: center;
+  border-style: groove;
+  width: 30%;
+  margin-left: 35%;
+  border-radius: 10px;
+  height: 40%;
+  padding-top: 50px;
+  background-color: rgba(232, 241, 238, 0.986);
 }
 
-#loginbtn{
-    width: 20%;
-    background-color:black;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: white;
-    border-radius: 10px;
-    border: black;
-    padding-bottom: 2%;
+#loginbtn {
+  width: 20%;
+  background-color: black;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: white;
+  border-radius: 10px;
+  border: black;
+  padding-bottom: 2%;
 }
 
-#loginbtn:hover{
-    color: grey;
+#loginbtn:hover {
+  color: grey;
 }
 /* style for register page ends here*/
 
 /* style for registersuccess page starts here*/
-.registeredMessage{
-    color:grey;
-    text-align: center;
-    margin-top: 10%;
+.registeredMessage {
+  color: grey;
+  text-align: center;
+  margin-top: 10%;
 }
 
-.backtologinbtn{
-    align-items: center;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+.backtologinbtn {
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
 }
 
-.backtologinbtn:hover{
-    color: grey;
+.backtologinbtn:hover {
+  color: grey;
 }
-/* style for registersuccess page ends here*/ 
+/* style for registersuccess page ends here*/
 
 /* style for navbar page starts here*/
-#qburst,#basic-nav-dropdown{
-    color:aliceblue;
-    padding-left: 1%;
+#qburst,
+#basic-nav-dropdown {
+  color: aliceblue;
+  padding-left: 1%;
 }
-.menubar{
-    background-color: black;
+.menubar {
+  background-color: black;
 }
 /* style for navbar page ends here*/
 
 /* style for home page starts here*/
-.homeMessage{
-    text-align: center;
-    padding-top: 15%;
+.homeMessage {
+  text-align: center;
+  padding-top: 15%;
 }
 /* style for home page starts here*/
 
 /* style for customer page starts here*/
-.FeedbackForm{
-    text-align: center;
-    padding-top: 1%;
-    border: groove;
-    margin-top: 1%;
-    margin-left: 25%;
-    width: 50%;
+.FeedbackForm {
+  text-align: center;
+  padding-top: 1%;
+  border: groove;
+  margin-top: 1%;
+  margin-left: 25%;
+  width: 50%;
 }
-.logouploaded{
+.logouploaded {
   height: 5%;
   width: 10%;
   border-radius: 11.5%;
 }
-.submitbtn{
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    margin-bottom: 2%;
+.submitbtn {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  margin-bottom: 2%;
 }
 
-.submitbtn:hover{
-    color: grey;
+.submitbtn:hover {
+  color: grey;
 }
 /* style for customer page ends here*/
 
 /* style for endpage starts here*/
-.success{
-    text-align: center;
-    margin-top: 10%;
+.success {
+  text-align: center;
+  margin-top: 10%;
 }
 
-.EndMessage{
-    color: grey;
+.EndMessage {
+  color: grey;
 }
 
-.EndPageBtn{
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    
+.EndPageBtn {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
 }
 
-.EndPageBtn:hover{
-    color: grey;
+.EndPageBtn:hover {
+  color: grey;
 }
 /* style for endpage ends here*/
 
 /* style for errormessage page*/
-.errormessage{
+.errormessage {
   text-align: center;
   color: grey;
   margin-top: 20%;

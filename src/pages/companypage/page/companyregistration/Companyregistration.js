@@ -7,22 +7,6 @@ import "./companyregistration.css";
 const Companyregistration = () => {
   const [file, setfile] = useState();
 
-  function handlefile(event) {
-    setfile(event.target.files[0]);
-    console.log(event.target.files[0]);
-
-    const options = {
-      method: "POST",
-      body: event.target.files[0],
-    };
-
-    fetch("../../src/images", options);
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // 👈️ prevent page refresh
-  };
-
   let no_of_company = localStorage.getItem("no_of_company");
   let company_details = {
     CompanyName: "",
@@ -33,7 +17,40 @@ const Companyregistration = () => {
     Firstname: "",
     Secondname: "",
     nameinlink: "",
+    logo: "",
     id: no_of_company++,
+  };
+
+  function handlefile(event) {
+    setfile(event.target.files[0]);
+    console.log(event.target.files[0]);
+
+    const img = document.getElementById("img");
+    var image = new Image();
+    image.src = "imagesource.jpg";
+
+    const canvas = document.createElement("canvas");
+
+    // Set the canvas dimensions to the image dimensions
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Get the canvas context
+    const ctx = canvas.getContext("2d");
+
+    // Draw the image on the canvas
+    ctx.drawImage(img, 0, 0);
+
+    // Get the Base64-encoded data
+    const dataURL = canvas.toDataURL();
+
+    console.log(dataURL);
+
+    company_details.logo = dataURL;
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // 👈️ prevent page refresh
   };
 
   function addDetail() {

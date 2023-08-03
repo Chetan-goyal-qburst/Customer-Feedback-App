@@ -4,6 +4,7 @@ import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import "./companyregistration.css";
 
+
 const Companyregistration = () => {
   const [file, setfile] = useState();
 
@@ -61,7 +62,7 @@ const Companyregistration = () => {
         // handle error
       });
   }
-
+  
   return (
     <>
       <NavBar />
@@ -193,6 +194,7 @@ const Companyregistration = () => {
       </Container>
     </>
   );
+  
 };
 
 export default Companyregistration;

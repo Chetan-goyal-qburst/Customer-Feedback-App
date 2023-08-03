@@ -11,7 +11,7 @@ export default function Radio() {
       return;
     }
 
-    const optionNumber = radioButtons.length + 1; // Calculate the option number
+    const optionNumber = radioButtons.length + 1;
 
     setRadioButtons([
       ...radioButtons,
@@ -26,6 +26,14 @@ export default function Radio() {
     }
 
     setRadioButtons(radioButtons.slice(0, radioButtons.length - 1));
+  };
+
+  const handleOptionChange = (id, newValue) => {
+    setRadioButtons((prevRadioButtons) =>
+      prevRadioButtons.map((radioButton) =>
+        radioButton.id === id ? { ...radioButton, value: newValue } : radioButton
+      )
+    );
   };
 
   return (
@@ -46,6 +54,7 @@ export default function Radio() {
               className="form-select-lg mb-3 mx-2"
               value={radioButton.value}
               id={`text-option${radioButton.id}`}
+              onChange={(e) => handleOptionChange(radioButton.id, e.target.value)}
             />
           </div>
         ))}

@@ -171,6 +171,11 @@
     margin-left: 25%;
     width: 50%;
 }
+.logouploaded{
+  height: 5%;
+  width: 10%;
+  border-radius: 11.5%;
+}
 .submitbtn{
     border-radius: 10px;
     background-color: black;
@@ -204,3 +209,10 @@
     color: grey;
 }
 /* style for endpage ends here*/
+
+/* style for errormessage page*/
+.errormessage{
+  text-align: center;
+  color: grey;
+  margin-top: 20%;
+}

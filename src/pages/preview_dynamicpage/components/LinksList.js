@@ -65,8 +65,7 @@ const LinksList = () => {
     <div>
       <NavBar />
       <Header name="Links List" />
-      <div className="container">
-        {/* <h1 className="mt-4 mb-4">Links List</h1> */}
+      <div className="container" >
         <table className="table">
           <thead>
             <tr>
@@ -88,6 +87,7 @@ const LinksList = () => {
                   <button
                     className="btn btn-info btn-sm"
                     onClick={() => setEditLink(link)}
+                    style={{ marginRight: "5px" }}
                   >
                     Edit
                   </button>
@@ -106,6 +106,7 @@ const LinksList = () => {
           <button
             className="btn btn-primary"
             onClick={() => setShowAddLinkModal(true)}
+            style={{ margin: "10px" }}
           >
             + Add Link
           </button>
@@ -193,7 +194,7 @@ const LinksList = () => {
                     name="name"
                     className="form-control"
                     required
-                    defaultValue={editLink.name} // Set the default value here
+                    defaultValue={editLink.name} 
                   />
                 </div>
                 <div className="form-group">
@@ -204,7 +205,7 @@ const LinksList = () => {
                     name="description"
                     className="form-control"
                     required
-                    defaultValue={editLink.description} // Set the default value here
+                    defaultValue={editLink.description} 
                   />
                 </div>
                 <div className="form-group">
@@ -214,7 +215,7 @@ const LinksList = () => {
                     name="product"
                     className="form-control"
                     required
-                    defaultValue={editLink.product} // Set the default value here
+                    defaultValue={editLink.product} 
                   >
                     <option value="Product A">Product A</option>
                     <option value="Product B">Product B</option>
@@ -229,7 +230,7 @@ const LinksList = () => {
                     name="form"
                     className="form-control"
                     required
-                    defaultValue={editLink.form} // Set the default value here
+                    defaultValue={editLink.form} 
                   >
                     <option value="Form X">Form X</option>
                     <option value="Form Y">Form Y</option>

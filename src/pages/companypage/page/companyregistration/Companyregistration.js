@@ -4,13 +4,19 @@ import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import "./companyregistration.css";
 
-
 const Companyregistration = () => {
   const [file, setfile] = useState();
 
   function handlefile(event) {
     setfile(event.target.files[0]);
     console.log(event.target.files[0]);
+
+    const options = {
+      method: "POST",
+      body: event.target.files[0],
+    };
+
+    fetch("../../src/images", options);
   }
 
   const handleSubmit = (event) => {
@@ -62,7 +68,7 @@ const Companyregistration = () => {
         // handle error
       });
   }
-  
+
   return (
     <>
       <NavBar />
@@ -194,7 +200,6 @@ const Companyregistration = () => {
       </Container>
     </>
   );
-  
 };
 
 export default Companyregistration;

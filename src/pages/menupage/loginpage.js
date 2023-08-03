@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./home";
 import Header from "../../components/header/Header";
-import { flag } from "./myconstants";
+
 
 function LoginPage() {
 
@@ -22,7 +22,7 @@ function LoginPage() {
     setPassword(event.target.value);
   };
   
-
+  const flag =false;
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -41,7 +41,7 @@ function LoginPage() {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
             window.location.href = "http://localhost:3000/home";
-            flag = true;
+           flag =true;
           }
         });
 

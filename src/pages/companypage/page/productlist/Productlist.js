@@ -3,8 +3,7 @@ import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
 import { Col, Container, Row } from "react-bootstrap";
-import { flag } from "../../../menupage/myconstants";
-import ErrorMessage from "../../../menupage/errorpage";
+
 
 const Productlist = () => {
   const [companydata, setcompany] = useState([]);
@@ -32,8 +31,7 @@ const Productlist = () => {
     fetchcompanydata();
   }, []);
 
-  {/*security check*/}
-  if(flag===true){
+  
   return (
     <div>
       <div>
@@ -70,12 +68,7 @@ const Productlist = () => {
       </div>
     </div>
   );
-  }
-  else{
-    return (
-      <ErrorMessage/>
-    );
-  }
+  
 };
 
 export default Productlist;

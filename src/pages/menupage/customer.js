@@ -3,11 +3,10 @@ import "./styles.css";
 import NavBar from "./navbar";
 import {Link} from "react-router-dom";
 import ImageUpload from "./imageupload";
-import { flag } from "./myconstants";
-import ErrorMessage from "./errorpage";
+
 
  const CustomerPage = () =>{
-    if(flag===true){
+   
         return(
             <div>
                 <NavBar/>
@@ -22,12 +21,6 @@ import ErrorMessage from "./errorpage";
                  
             </div>
         );
-    }
-    else{
-       return(
-        <ErrorMessage/>
-       );
-    }
     
 };
 

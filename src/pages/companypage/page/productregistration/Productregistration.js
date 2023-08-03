@@ -3,8 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import "./productregistration.css";
-import { flag } from "../../../menupage/myconstants";
-import ErrorMessage from "../../../menupage/errorpage";
+
 
 const Productregistration = () => {
   const [file, setfile] = useState();
@@ -58,8 +57,7 @@ const Productregistration = () => {
         // handle error
       });
   }
-  {/*security check*/}
-  if(flag===true){
+  
   return (
     <>
       <NavBar />
@@ -191,12 +189,7 @@ const Productregistration = () => {
       </Container>
     </>
   );
-  }
-  else{
-    return (
-      <ErrorMessage/>
-    );
-  }
+  
 };
 
 export default Productregistration;

@@ -1,6 +1,7 @@
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from "reactjs-social-login";
 import "./styles.css";
+import { flag } from "./myconstants";
 
 
 
@@ -14,6 +15,7 @@ const GoogleAuthentication = () =>{
             discoveryDocs="claims_supported"
             access_type="offline"
             onResolve={({ provider, data }) => {
+            
             window.location.href = "http://localhost:3000/home";
       
             }}

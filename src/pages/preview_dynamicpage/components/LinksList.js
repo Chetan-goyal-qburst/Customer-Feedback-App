@@ -4,6 +4,7 @@ import LinkService from "./LinkService";
 import NavBar from "../../menupage/navbar";
 import Header from "../../../components/header/Header";
 
+
 const LinksList = () => {
   const [links, setLinks] = useState([]);
   const [editLink, setEditLink] = useState(null);
@@ -59,7 +60,7 @@ const LinksList = () => {
       .then(() => fetchLinksData())
       .catch((error) => console.error(error));
   };
-
+  
   return (
     <div>
       <NavBar />
@@ -248,6 +249,8 @@ const LinksList = () => {
       </div>
     </div>
   );
+  
+  
 };
 
 export default LinksList;

@@ -15,8 +15,11 @@ const ImageUpload = ()=>{
     <div >
      
       <div className="imageupload">
+        {/*taking input from user */}
          <input type="file" onChange={handleImage} /><br></br>
-         {selectedImage && <img src={URL.createObjectURL(selectedImage)} alt="Uploaded" />}
+
+         {/*it creates src by URL.createObjectURL(selectedImage)*/}
+        {selectedImage && <img className="logouploaded" src={URL.createObjectURL(selectedImage)} alt="Uploaded" />} 
       </div>
     </div>
    );

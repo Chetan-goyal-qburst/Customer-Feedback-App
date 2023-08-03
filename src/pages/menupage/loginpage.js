@@ -8,7 +8,9 @@ import { useState } from "react";
 import HomePage from "./home";
 import Header from "../../components/header/Header";
 
+
 function LoginPage() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,8 +21,8 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const flag = false;
-
+  
+  const flag =false;
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -39,7 +41,7 @@ function LoginPage() {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
             window.location.href = "http://localhost:3000/home";
-            flag = true;
+           flag =true;
           }
         });
 

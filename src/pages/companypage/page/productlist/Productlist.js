@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
 import { Col, Container, Row } from "react-bootstrap";
 
+
 const Productlist = () => {
   const [companydata, setcompany] = useState([]);
 
@@ -29,6 +30,8 @@ const Productlist = () => {
   useEffect(() => {
     fetchcompanydata();
   }, []);
+
+  
   return (
     <div>
       <div>
@@ -65,6 +68,7 @@ const Productlist = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Productlist;

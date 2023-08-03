@@ -4,7 +4,6 @@ import Header from "../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
 import { Col, Container, Row } from "react-bootstrap";
 
-
 const Productlist = () => {
   const [companydata, setcompany] = useState([]);
 
@@ -31,7 +30,6 @@ const Productlist = () => {
     fetchcompanydata();
   }, []);
 
-  
   return (
     <div>
       <div>
@@ -55,6 +53,7 @@ const Productlist = () => {
         <div>
           {companydata.map((data) => (
             <Detailtab
+              api="productlist"
               key={data.id}
               pserialno={data.id}
               serialno={data.id}
@@ -68,7 +67,6 @@ const Productlist = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Productlist;

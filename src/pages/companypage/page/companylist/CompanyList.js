@@ -16,14 +16,11 @@ const CompanyList = () => {
         if (res.ok) {
           return res.json();
         }
-        // // handle error
       })
       .then((tasks) => {
         setcompany(tasks);
       })
-      .catch((error) => {
-        // handle error
-      });
+      .catch((error) => {});
   };
 
   useEffect(() => {
@@ -53,6 +50,7 @@ const CompanyList = () => {
         <div>
           {companydata.map((data) => (
             <Detailtab
+              api="cfa"
               key={data.id}
               serialno={data.id}
               name={data.CompanyName}

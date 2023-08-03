@@ -3,6 +3,8 @@ import { Modal } from "react-bootstrap";
 import LinkService from "./LinkService";
 import NavBar from "../../menupage/navbar";
 import Header from "../../../components/header/Header";
+import { flag } from "../../menupage/myconstants";
+import ErrorMessage from "../../menupage/errorpage";
 
 const LinksList = () => {
   const [links, setLinks] = useState([]);
@@ -59,7 +61,8 @@ const LinksList = () => {
       .then(() => fetchLinksData())
       .catch((error) => console.error(error));
   };
-
+  {/* security check*/}
+  if(flag===true){
   return (
     <div>
       <NavBar />
@@ -248,6 +251,12 @@ const LinksList = () => {
       </div>
     </div>
   );
+  }
+  else{
+    return (
+      <ErrorMessage/>
+    );
+  }
 };
 
 export default LinksList;

@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./home";
 import Header from "../../components/header/Header";
+import { flag } from "./myconstants";
 
 function LoginPage() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,7 +21,7 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const flag = false;
+  
 
   const handleLogin = (event) => {
     event.preventDefault();

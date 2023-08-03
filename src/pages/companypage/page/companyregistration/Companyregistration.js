@@ -3,6 +3,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import "./companyregistration.css";
+import { flag } from "../../../menupage/myconstants";
+import ErrorMessage from "../../../menupage/errorpage";
 
 const Companyregistration = () => {
   const [file, setfile] = useState();
@@ -61,7 +63,8 @@ const Companyregistration = () => {
         // handle error
       });
   }
-
+  {/*security check*/}
+  if(flag===true){
   return (
     <>
       <NavBar />
@@ -193,6 +196,12 @@ const Companyregistration = () => {
       </Container>
     </>
   );
+  }
+  else{
+    return (
+      <ErrorMessage/>
+    );
+  }
 };
 
 export default Companyregistration;

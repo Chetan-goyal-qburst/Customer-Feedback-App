@@ -4,6 +4,8 @@ import Detailtab from "../../components/detailtab/Detailtab";
 import { Container } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
 import "./companylist.css";
+import { flag } from "../../../menupage/myconstants";
+import ErrorMessage from "../../../menupage/errorpage";
 
 const CompanyList = () => {
   const [companydata, setcompany] = useState([]);
@@ -30,6 +32,9 @@ const CompanyList = () => {
   useEffect(() => {
     fetchcompanydata();
   }, []);
+
+  {/*security check*/}
+  if(flag===true){
   return (
     <div>
       <NavBar />
@@ -65,6 +70,12 @@ const CompanyList = () => {
       </div>
     </div>
   );
+  }
+  else{
+    return (
+      <ErrorMessage/>
+    );
+  }
 };
 
 export default CompanyList;

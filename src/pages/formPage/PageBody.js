@@ -2,16 +2,22 @@ import React, { useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './body.css';
 import SelectedOption from './SelectedOption';
+//import Page1 from './Page1';
+
 
 
 export default function PageBody() {
   const [formContent, setFormContent] = useState([]);
   const [answerTypes, setAnswerTypes] = useState([]);
+  
  
-  const deleteQuestion = (index) => {
-    const updatedFormContent = formContent.filter((_, i) => i !== index);
+  const deleteQuestion = (index, label) => {
+    const updatedFormContent = formContent.filter((question, i) => {
+      return i !== index && question.label !== label;
+    });
     setFormContent(updatedFormContent);
   };
+  
   const addQuestion = (answerType) => {
     const field = {
       name: `${formContent.length + 1}. `,
@@ -27,9 +33,9 @@ export default function PageBody() {
           <select
             className="form-select-lg mb-3"
             onChange={(e) => handleAnswerTypeChange(e, formContent.length)}
-            value={answerTypes[formContent.length] || ''}
+           
           >
-            <option value="" disabled>Select answer type</option>
+            <option value="" disabled selected>Select answer type</option>
             <option value="text">Text Box</option>
             <option value="number">Text Box for Numbers</option>
             <option value="textarea">Big Text Area</option>
@@ -42,11 +48,11 @@ export default function PageBody() {
         </div>
       ),
       delete_button: (
-        <button onClick={() => deleteQuestion(formContent.length - 1)}>Delete</button>
+        <button onClick={() => deleteQuestion(formContent.index,formContent.label)}>Delete</button>
       ),
     };
     setFormContent([...formContent, field]);
-    setAnswerTypes([...answerTypes, answerType]); // Save the selected answer type for the current question
+    setAnswerTypes([...answerTypes, answerType]); 
   };
   
   const handleAnswerTypeChange = (e, index) => {
@@ -54,6 +60,10 @@ export default function PageBody() {
     updatedAnswerTypes[index] = e.target.value;
     setAnswerTypes(updatedAnswerTypes);
   };
+
+
+  const saveForm=()=>{
+   }
   
 
   
@@ -67,14 +77,14 @@ export default function PageBody() {
         formContent.map((field, index) =>{
           return(
                   <>
-                  <div key={index} className="question-container">
-                      <name>{field.name}</name>
+                  <div key={index} className="question-container" >
+                      <name classname="mx-2">{field.name}</name>
                       <label>{field.label}</label>
                       <answer_type>{field.answer_type}</answer_type>
                       <SelectedOption answerType={answerTypes[index]}/>
                       
                     </div>
-                     <button onClick={() => deleteQuestion(index)} className="btn btn-primary ">Delete</button>
+                     <button onClick={() => deleteQuestion(index, field.label)} className="btn btn-primary ">Delete</button>
                      
                     
                     <hr/>
@@ -86,6 +96,7 @@ export default function PageBody() {
       }
       
       <button onClick={()=> addQuestion()}  className="btn btn-primary mb-2 mt-2">Add Another Question</button>
+      <button onClick={()=> saveForm(answerTypes[0])}  className="btn btn-primary mb-2 mt-2 mx-4">Save Form</button>
     </div>
   );
 }

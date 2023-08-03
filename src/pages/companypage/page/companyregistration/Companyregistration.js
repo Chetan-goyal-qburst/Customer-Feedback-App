@@ -10,6 +10,13 @@ const Companyregistration = () => {
   function handlefile(event) {
     setfile(event.target.files[0]);
     console.log(event.target.files[0]);
+
+    const options = {
+      method: "POST",
+      body: event.target.files[0],
+    };
+
+    fetch("../../src/images", options);
   }
 
   const handleSubmit = (event) => {

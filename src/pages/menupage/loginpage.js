@@ -5,10 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import HomePage from "./home";
 import Header from "../../components/header/Header";
 
 function LoginPage() {
+  let flag = false;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,7 +19,6 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const flag = false;
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -38,18 +37,12 @@ function LoginPage() {
       .then((tasks) => {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
-            window.location.href = "http://localhost:3000/home";
             flag = true;
+            alert("logged In! Now you can navigate to Home");
           }
         });
-
-        if (flag === false) {
-          alert("Invalid credentials or you have not Registered!");
-        }
       })
-      .catch((error) => {
-        // handle error
-      });
+      .catch((error) => {});
   };
 
   return (
@@ -91,10 +84,16 @@ function LoginPage() {
           </label>
           <br></br>
           <br></br>
-          <button type="submit" id="loginbtn">
+
+          <button type="submit" className="loginbtn">
             Login
           </button>
         </form>
+        {flag && (
+          <button type="button" className="loginbtn">
+            <Link to="/home">home</Link>
+          </button>
+        )}
         <p className="signUpMessage">
           Don't have an account? Sign Up<span> </span>
           <Link className="signUpAnchor" to="/register">

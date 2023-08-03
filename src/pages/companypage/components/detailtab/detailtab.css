@@ -1,15 +1,13 @@
 .data-row {
   background-color: #f1f6f9;
-  margin-top: 10px;
   text-align: center;
   border-bottom: 1px solid;
   padding: 10px;
-  margin: 10px;
 }
 
 .tab-header {
   z-index: 10;
-  background-color: #f1f6f9;
+  background-color: #c4dfdf;
   position: -webkit-sticky;
   position: sticky;
   top: 0;

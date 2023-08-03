@@ -7,7 +7,7 @@ const Detailtab = (props) => {
   localStorage.setItem("no_of_product", props.pserialno);
 
   let deleteandupdate;
-  if (props.className != "tab-header") {
+  if (props.className !== "tab-header") {
     deleteandupdate = (
       <Col lg="2">
         <button className="deleteandupdate button-37">Update</button>

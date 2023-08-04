@@ -4,7 +4,6 @@ import NavBar from "../../../menupage/navbar";
 import Header from "../../components/header/Header";
 import "./productregistration.css";
 
-
 const Productregistration = () => {
   const [file, setfile] = useState();
 
@@ -14,7 +13,7 @@ const Productregistration = () => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // 👈️ prevent page refresh
+    event.preventDefault();
   };
 
   let no_of_product = localStorage.getItem("no_of_product");
@@ -57,7 +56,7 @@ const Productregistration = () => {
         // handle error
       });
   }
-  
+
   return (
     <>
       <NavBar />
@@ -189,7 +188,6 @@ const Productregistration = () => {
       </Container>
     </>
   );
-  
 };
 
 export default Productregistration;

@@ -4,11 +4,14 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Header from "../../components/header/Header";
+import useAuth from "./auth";
+import DataContext from "./DataContext";
 
 function LoginPage() {
-  let flag = false;
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { setSharedValue } = useContext(DataContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -37,8 +40,10 @@ function LoginPage() {
       .then((tasks) => {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
-            flag = true;
-            alert("logged In! Now you can navigate to Home");
+            setIsLoggedIn(true);
+            setSharedValue(true);
+            console.log(isLoggedIn);
+            alert("LoggedIn Now you can navigate to Home Page");
           }
         });
       })
@@ -85,15 +90,19 @@ function LoginPage() {
           <br></br>
           <br></br>
 
-          <button type="submit" className="loginbtn">
-            Login
-          </button>
+          {isLoggedIn ? (
+            <Link to="/home">
+              <button type="submit" className="loginbtn">
+                Home
+              </button>
+            </Link>
+          ) : (
+            <button type="submit" className="loginbtn">
+              Login
+            </button>
+          )}
         </form>
-        {flag && (
-          <button type="button" className="loginbtn">
-            <Link to="/home">home</Link>
-          </button>
-        )}
+
         <p className="signUpMessage">
           Don't have an account? Sign Up<span> </span>
           <Link className="signUpAnchor" to="/register">

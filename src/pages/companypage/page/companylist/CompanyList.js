@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Detailtab from "../../components/detailtab/Detailtab";
-import { Container } from "react-bootstrap";
 import NavBar from "../../../menupage/navbar";
 import "./companylist.css";
-
 
 const CompanyList = () => {
   const [companydata, setcompany] = useState([]);
@@ -18,21 +16,17 @@ const CompanyList = () => {
         if (res.ok) {
           return res.json();
         }
-        // // handle error
       })
       .then((tasks) => {
         setcompany(tasks);
       })
-      .catch((error) => {
-        // handle error
-      });
+      .catch((error) => {});
   };
 
   useEffect(() => {
     fetchcompanydata();
   }, []);
 
-  
   return (
     <div>
       <NavBar />
@@ -56,6 +50,7 @@ const CompanyList = () => {
         <div>
           {companydata.map((data) => (
             <Detailtab
+              api="cfa"
               key={data.id}
               serialno={data.id}
               name={data.CompanyName}
@@ -68,7 +63,6 @@ const CompanyList = () => {
       </div>
     </div>
   );
-  
 };
 
 export default CompanyList;

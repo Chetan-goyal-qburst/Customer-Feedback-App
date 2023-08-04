@@ -15,6 +15,7 @@ import Companyregistration from "./pages/companypage/page/companyregistration/Co
 import ProductList from "./pages/companypage/page/productlist/Productlist";
 import Productregistration from "./pages/companypage/page/productregistration/Productregistration";
 import Layout from "./pages/formPage/Layout";
+import Description from "./pages/companypage/page/description/Description";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/formpage",
     element: <Layout />,
+  },
+  {
+    path: "/description",
+    element: <Description />,
   },
 ]);
 

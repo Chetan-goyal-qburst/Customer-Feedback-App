@@ -4,14 +4,14 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Header from "../../components/header/Header";
-import { useNavigate } from "react-router-dom";
+import useAuth from "./auth";
 
 
 function LoginPage() {
-  let flag = false;
-  let navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,7 +22,7 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
+  let flag = false;
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -40,17 +40,21 @@ function LoginPage() {
       .then((tasks) => {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
-           window.location.href = "http://localhost:3000/home";
-           flag = true;
+            setIsLoggedIn(true);
+            flag = true;
+            alert("LoggedIn Now you can navigate to Home Page");
           }
-          else if(flag === false)
-          alert("Invalid");
+         
         });
-        
+        if(flag ===false)
+        alert("Invalid");
       })
-      .catch((error) => {});
+      .catch((error) => {
+       
+      });
+      
   };
-
+  
   return (
     <div className="loginpage">
       <Navbar className="menubar" expand="lg">
@@ -91,15 +95,19 @@ function LoginPage() {
           <br></br>
           <br></br>
 
-          <button type="submit"  className="loginbtn">
-            Login
-          </button>
+          {isLoggedIn ? (
+            <Link to="/home">
+              <button type="submit" className="loginbtn">
+                Home
+              </button>
+            </Link>
+          ) : (
+            <button type="submit" className="loginbtn">
+              Login
+            </button>
+          )}
         </form>
-        {flag && (
-          <button type="button" className="loginbtn">
-            <Link to="/home">home</Link>
-          </button>
-        )}
+
         <p className="signUpMessage">
           Don't have an account? Sign Up<span> </span>
           <Link className="signUpAnchor" to="/register">

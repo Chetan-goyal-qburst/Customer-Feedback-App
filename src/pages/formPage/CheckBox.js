@@ -52,7 +52,7 @@ export default function CheckBox() {
             <label htmlFor={`checkbox-option${checkbox.id}`} />
             <input
               type="text"
-              className="form-select-lg mb-3 mx-1"
+              className="form-select-lg mb-3 mx-2"
               value={checkbox.value}
               id={`text-option${checkbox.id}`}
               onChange={(e) => handleOptionChange(checkbox.id, e.target.value)}

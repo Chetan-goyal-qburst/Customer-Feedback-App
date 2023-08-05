@@ -6,9 +6,12 @@ import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Header from "../../components/header/Header";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginPage() {
   let flag = false;
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -37,10 +40,13 @@ function LoginPage() {
       .then((tasks) => {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
-            flag = true;
-            alert("logged In! Now you can navigate to Home");
+           window.location.href = "http://localhost:3000/home";
+           flag = true;
           }
+          else if(flag === false)
+          alert("Invalid");
         });
+        
       })
       .catch((error) => {});
   };
@@ -85,7 +91,7 @@ function LoginPage() {
           <br></br>
           <br></br>
 
-          <button type="submit" className="loginbtn">
+          <button type="submit"  className="loginbtn">
             Login
           </button>
         </form>

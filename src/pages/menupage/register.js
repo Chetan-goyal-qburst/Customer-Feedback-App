@@ -6,11 +6,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import RegisterSuccess from "./registersuccess";
 import Header from "../../components/header/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -22,6 +25,11 @@ const RegisterPage = () => {
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const togglePasswordVisibility = (event) => {
+    event.preventDefault();
+    setShowPassword(!showPassword);
   };
 
   const handleSubmit = (event) => {
@@ -95,12 +103,18 @@ const RegisterPage = () => {
             Create Password:<br></br>
             <input
               className="registerInput"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="create strong password"
               value={password}
               onChange={handlePasswordChange}
               required
             />
+            <button
+              className="password-toggle-btn"
+              onClick={togglePasswordVisibility}
+            >
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </button>
           </label>
           <br></br>
           <br></br>

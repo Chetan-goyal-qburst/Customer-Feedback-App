@@ -33,7 +33,7 @@ const RegisterPage = () => {
       password: password,
     };
 
-    fetch("https://64c9352db2980cec85c20b9f.mockapi.io/userdata", {
+    fetch("https://localhost:7039/api/User", {
       method: "POST",
       headers: { "content-type": "application/json" },
       // Send your data in the request body as JSON

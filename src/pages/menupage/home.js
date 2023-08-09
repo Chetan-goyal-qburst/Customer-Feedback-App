@@ -3,7 +3,6 @@ import NavBar from "./navbar";
 import "./styles.css";
 import LoginPage from "./loginpage";
 import UnAuth from "./unauth";
-import DataContext from "./DataContext";
 
 const HomePage = () => {
   return (

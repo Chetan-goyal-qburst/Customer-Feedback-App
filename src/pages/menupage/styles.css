@@ -43,6 +43,19 @@
   background-color: rgba(232, 241, 238, 0.986);
 }
 
+.password-input {
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+}
+
 .loginbtn {
   width: 20%;
   background-color: rgb(14, 13, 13);

@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import Header from "../../components/header/Header";
 import useAuth from "./auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function LoginPage() {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
@@ -14,6 +16,15 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = (event) => {
+    event.preventDefault();
+    setShowPassword(!showPassword);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);

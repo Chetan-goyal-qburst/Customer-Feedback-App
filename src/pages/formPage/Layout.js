@@ -10,7 +10,7 @@ const Layout = () => {
     return (
       <div>
           <NavBar/>
-          {/* <Header/> */}
+           <Header name="Form Page"/> 
           <Page1/>
       </div>
     )

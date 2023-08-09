@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavBar from "./navbar";
 import "./styles.css";
-
-
+import LoginPage from "./loginpage";
+import UnAuth from "./unauth";
 
 const HomePage = () => {
-  
-  
-    return (
-      <div>
-        <NavBar />
-        <h1 className="homeMessage">Welcome to home page</h1>
-      </div>
-    );
-  
+  return (
+    <div>
+      <NavBar />
+
+      <h1 className="homeMessage">Welcome to home page</h1>
+    </div>
+  );
 };
 
 export default HomePage;

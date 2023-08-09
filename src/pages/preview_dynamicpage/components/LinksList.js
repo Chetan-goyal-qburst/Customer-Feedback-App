@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import LinkService from "./LinkService";
 import NavBar from "../../menupage/navbar";
 import Header from "../../../components/header/Header";
-// import "./backgroundAnimation.js";
+import "./backgroundAnimation.js";
 
 const LinksList = () => {
   const [links, setLinks] = useState([]);

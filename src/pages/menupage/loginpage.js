@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import Header from "../../components/header/Header";
 import useAuth from "./auth";
-import DataContext from "./DataContext";
+
 
 function LoginPage() {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
-  const { setSharedValue } = useContext(DataContext);
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,7 +22,7 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
+  let flag = false;
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -41,15 +41,20 @@ function LoginPage() {
         tasks.forEach((element) => {
           if (element.email === email && element.password === password) {
             setIsLoggedIn(true);
-            setSharedValue(true);
-            console.log(isLoggedIn);
+            flag = true;
             alert("LoggedIn Now you can navigate to Home Page");
           }
+         
         });
+        if(flag ===false)
+        alert("Invalid");
       })
-      .catch((error) => {});
+      .catch((error) => {
+       
+      });
+      
   };
-
+  
   return (
     <div className="loginpage">
       <Navbar className="menubar" expand="lg">

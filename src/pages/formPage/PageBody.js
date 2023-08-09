@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './body.css';
 import SelectedOption from './SelectedOption';
-import Page1 from './Page1';
+import {Link} from 'react-router-dom'
 
 
 
-export default function PageBody() {
+export default function PageBody({saveForm}) {
   const [formContent, setFormContent] = useState([]);
   const [answerTypes, setAnswerTypes] = useState([]);
   const minContainersAllowed = 1; // Minimum number of containers allowed
+
+ 
+
+  
 
   useEffect(() => {
     // When the component mounts, set the initial default container
@@ -126,9 +130,8 @@ export default function PageBody() {
     setAnswerTypes(updatedAnswerTypes);
   };
 
-  const saveForm = () => {
-    
-  };
+
+
 
   return (
     <div className="container">
@@ -154,15 +157,8 @@ export default function PageBody() {
           </div>
         );
       })}
-      <button onClick={addQuestion} className="btn btn-primary mb-2 mt-2">
-        Add Another Question
-      </button>
-      <button
-        onClick={() => saveForm(answerTypes[0])}
-        className="btn btn-primary mb-2 mt-2 mx-4"
-      >
-        Save Form
-      </button>
+      <button onClick={addQuestion} className="btn btn-primary mb-2 mt-2"> Add Another Question</button>
+      <Link to="/list"> <button onClick={() => saveForm()}className="btn btn-primary mb-2 mt-2 mx-4"> Save Form</button> </Link>
     </div>
   );
 }

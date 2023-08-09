@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import './f-list.css';
 import { Link } from 'react-router-dom';
 
 export const FormList = () => {
@@ -87,7 +86,7 @@ export const FormList = () => {
         <tbody id="form-table-body"></tbody>
       </table>
       <Link to="/form">
-        <button id="create-new-form-button" className="btn btn-primary">
+        <button id="create-new-form-button" className="btn btn-primary mb-3">
           Create New Form
         </button>
       </Link>

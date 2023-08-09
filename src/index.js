@@ -16,6 +16,8 @@ import ProductList from "./pages/companypage/page/productlist/Productlist";
 import Productregistration from "./pages/companypage/page/productregistration/Productregistration";
 import Layout from "./pages/formPage/Layout";
 import Description from "./pages/companypage/page/description/Description";
+import FormList from "./pages/formPage/FormList";
+import Page1 from "./pages/formPage/Page1";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
   {
     path: "/description",
     element: <Description />,
+  },
+  {
+    path: "/list",
+    element: <FormList />,
+  },
+  {
+    path: "/form",
+    element: <Page1 />,
   },
 ]);
 

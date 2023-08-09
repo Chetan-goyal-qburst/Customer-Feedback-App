@@ -52,7 +52,7 @@ function LoginPage() {
             alert("LoggedIn Now you can navigate to Home Page");
           }
         });
-        if (flag === false) alert("Invalid");
+        if (flag === false) alert("Invalid Credentials!");
       })
       .catch((error) => {});
   };

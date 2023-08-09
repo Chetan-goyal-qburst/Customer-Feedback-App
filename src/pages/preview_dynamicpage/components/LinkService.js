@@ -1,4 +1,4 @@
-const API_URL = 'https://64bf88840d8e251fd110f977.mockapi.io/links';
+const API_URL = 'https://localhost:7083/api/LinksList';
 
 const LinkService = {
   fetchLinks: () => {

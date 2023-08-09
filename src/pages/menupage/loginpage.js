@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import Header from "../../components/header/Header";
 import useAuth from "./auth";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function LoginPage() {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
@@ -20,16 +18,6 @@ function LoginPage() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
-  const togglePasswordVisibility = (event) => {
-    event.preventDefault();
-    setShowPassword(!showPassword);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
   let flag = false;
   const handleLogin = (event) => {
     event.preventDefault();
@@ -53,7 +41,7 @@ function LoginPage() {
             alert("LoggedIn Now you can navigate to Home Page");
           }
         });
-        if (flag === false) alert("Invalid credentials");
+        if (flag === false) alert("Invalid");
       })
       .catch((error) => {});
   };

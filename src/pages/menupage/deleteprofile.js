@@ -3,15 +3,18 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import RegisterSuccess from "./registersuccess";
 import Header from "../../components/header/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const RegisterPage = () => {
+const DeletePage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [id, setId] = useState(null);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -31,19 +34,11 @@ const RegisterPage = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    /*pushing data on mockapi*/
-    const data = {
-      name: name,
-      email: email,
-      password: password,
-    };
-
+    let flag = false;
+    // getting data from database
     fetch("https://localhost:7152/api/User", {
-      method: "POST",
+      method: "GET",
       headers: { "content-type": "application/json" },
-      // Send your data in the request body as JSON
-      body: JSON.stringify(data),
     })
       .then((res) => {
         if (res.ok) {
@@ -51,12 +46,39 @@ const RegisterPage = () => {
         }
         // handle error
       })
-      .then((task) => {
-        window.location.href = "http://localhost:3000/registersuccess";
+      .then((tasks) => {
+        tasks.forEach((element) => {
+          if (element.email === email && element.password === password) {
+            flag = true;
+            setId(element.id);
+
+            const encodedEmail = encodeURIComponent(email);
+            const url = `https://localhost:7152/api/User/${encodedEmail}`;
+            // deleting profile
+            fetch(url, {
+              method: "DELETE",
+              headers: { "content-type": "application/json" },
+              // Send your data in the request body as JSON
+            })
+              .then((res) => {
+                if (res.ok) {
+                  return res.json();
+                }
+                // handle error
+              })
+              .then((task) => {
+                alert("Deleted profile!");
+              })
+              .catch((error) => {
+                // handle error
+              });
+          }
+        });
+        if (flag === false) alert("Invalid Credentials!");
       })
-      .catch((error) => {
-        // handle error
-      });
+      .catch((error) => {});
+
+    event.preventDefault();
   };
 
   return (
@@ -67,7 +89,7 @@ const RegisterPage = () => {
         </Navbar.Brand>
       </Navbar>
 
-      <Header name="Register"></Header>
+      <Header name="Delete Profile"></Header>
 
       <div className="register-container">
         <form onSubmit={handleSubmit}>
@@ -76,7 +98,7 @@ const RegisterPage = () => {
             <input
               className="registerInput"
               type="text"
-              placeholder="full name"
+              placeholder="name"
               value={name}
               onChange={handleNameChange}
               required
@@ -102,7 +124,7 @@ const RegisterPage = () => {
             <input
               className="registerInput"
               type={showPassword ? "text" : "password"}
-              placeholder="create strong password"
+              placeholder="password"
               value={password}
               onChange={handlePasswordChange}
               required
@@ -117,7 +139,7 @@ const RegisterPage = () => {
           <br></br>
           <br></br>
           <button type="submit" id="loginbtn">
-            Register
+            Delete
           </button>
         </form>
       </div>
@@ -125,4 +147,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default DeletePage;

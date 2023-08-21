@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import NavBar from "./navbar";
 import "./styles.css";
-import LoginPage from "./loginpage";
-import UnAuth from "./unauth";
 
 const HomePage = () => {
   return (
